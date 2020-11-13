@@ -37,5 +37,5 @@ var query = _ =>
         xml => p.innerHTML = xml
     )
 
-input.value = decodeURI(location.hash.slice(1))
+input.value = decodeURIComponent(location.hash.slice(1))
 button.addEventListener('click', query)
