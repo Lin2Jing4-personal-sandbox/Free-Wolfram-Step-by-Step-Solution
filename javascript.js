@@ -35,7 +35,9 @@ http://api.wolframalpha.com/v2/query?
 `
 
 form.onsubmit = event => {
-    container.prepend('Processing, please wait. ')
+    if (input.value == '')
+        return
+    container.insertAdjacentHTML('afterbegin', 'Processing, please wait. <progress>')
     fetch(
         url()
     ).then(
@@ -54,11 +56,10 @@ input.oninput = _ =>
 window.onhashchange = _ =>
     input.value = decodeURIComponent(location.hash.slice(1))
 
-if (input.value = decodeURIComponent(location.hash.slice(1)))
-    submit.click()
+submit.click()
 
 var demo = category => {
-    container.prepend('Processing, please wait. ')
+    container.insertAdjacentHTML('afterbegin', 'Processing, please wait. <progress>')
     fetch(
         `${proxy}https://www.wolframalpha.com/examples/pro-features/step-by-step-solutions/step-by-step-${category}`
     ).then(
@@ -76,5 +77,5 @@ var demo = category => {
 }
 
 document.querySelectorAll('.example').forEach(
-    example => example.href = `javascript:demo('${example.innerText}')`
+    example => example.href = `javascript:demo( '${example.innerText}' )`
 )
