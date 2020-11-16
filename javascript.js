@@ -35,6 +35,7 @@ http://api.wolframalpha.com/v2/query?
 `
 
 form.onsubmit = event => {
+    event.preventDefault()
     if (input.value == '')
         return
     container.insertAdjacentHTML('afterbegin', 'Processing, please wait. <progress>')
@@ -47,7 +48,6 @@ form.onsubmit = event => {
                                         .replace(/<pod title../g, '<h1>')
                                         .replace(/.......scanner/gs, '</h1><!')
     )
-    event.preventDefault()
 }
 
 input.oninput = _ =>
