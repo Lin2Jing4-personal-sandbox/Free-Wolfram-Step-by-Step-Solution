@@ -27,7 +27,7 @@ var url = _ =>
 ${proxy}
 http://api.wolframalpha.com/v2/query?
 &appid=${ appid[Date.now() % appid.length] }
-&input=${ percentalize(input.value) }
+&input=${ location.hash = percentalize(input.value) }
 &podstate=Step-by-step solution
 &podstate=Step-by-step
 &podstate=Show all steps
@@ -50,12 +50,7 @@ form.onsubmit = event => {
     )
 }
 
-input.oninput = _ =>
-    location.hash = percentalize(input.value)
-
-window.onhashchange = _ =>
-    input.value = decodeURIComponent(location.hash.slice(1))
-
+input.value = decodeURIComponent(location.hash.slice(1))
 submit.click()
 
 var demo = category => {
