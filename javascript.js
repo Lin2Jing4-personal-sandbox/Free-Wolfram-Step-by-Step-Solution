@@ -34,11 +34,11 @@ http://api.wolframalpha.com/v2/query?
 &scantimeout=20
 `
 
-(window.onhashchange = _ =>
-    input.value = decodeURIComponent(location.hash.slice(1))
+window.onhashchange = (
+    _ => input.value = decodeURIComponent(location.hash.slice(1))
 )()
 
-(form.onsubmit = event => {
+form.onsubmit = (event => {
     event.preventDefault()
     if (input.value == '')
         return
