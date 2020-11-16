@@ -39,9 +39,10 @@ window.onhashchange = (
 )()
 
 form.onsubmit = (event => {
-    event.preventDefault()
     if (input.value == '')
         return
+    if (event)
+        event.preventDefault()
     container.insertAdjacentHTML('afterbegin', 'Processing, please wait. <progress>')
     fetch(
         url()
