@@ -60,8 +60,8 @@ var demo = category => {
     ).then(
         html => html.text()
     ).then(
-        html => container.innerHTML = html.replace(/.*examples-subpage-body../gs, '')
-                                          .replace(/subpage-footer-section.*/gs, '')
+        html => container.innerHTML = html.replace(/.*examples-subpage-body../s, '')
+                                          .replace(/subpage-footer-section.*/s, '')
                                           .replace(/.input..../g, '/Free-Wolfram-Step-by-Step-Solution#')
                                           .replace(/\+/g, ' ')
                                           .replace(/&amp;..../g, '')
