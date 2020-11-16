@@ -16,13 +16,15 @@ var appid =
 '7JKH84-T648HW2UV9',
 ]
 
+var proxy = 'https://lin2jing4-cors.herokuapp.com/'
+
 var percentalize = str => 
     encodeURIComponent(str)
     .replace(/[-_.!~*'()]/g, char => '%' + char.charCodeAt(0).toString(16))
 
 var url = _ =>
 `
-https://lin2jing4-cors.herokuapp.com/
+${proxy}
 http://api.wolframalpha.com/v2/query?
 &appid=${ appid[Date.now() % appid.length] }
 &input=${ percentalize(input.value) }
@@ -58,9 +60,7 @@ if (input.value = decodeURIComponent(location.hash.slice(1)))
 var demo = category => {
     container.prepend('Processing, please wait. ')
     fetch(
-        'https://lin2jing4-cors.herokuapp.com/' +
-        'https://www.wolframalpha.com/examples/pro-features/step-by-step-solutions/' +
-        'step-by-step-' + category
+        `${proxy}https://www.wolframalpha.com/examples/pro-features/step-by-step-solutions/step-by-step-${category}`
     ).then(
         html => html.text()
     ).then(
