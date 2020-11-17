@@ -73,6 +73,6 @@ var demo = category => {
     )
 }
 
-document.querySelectorAll('.example').forEach(
-    example => example.href = `javascript:demo( '${example.innerText}' )`
+document.querySelectorAll('.example').forEach(example =>
+    example.href = `javascript:demo( '${example.innerText}' )`
 )
