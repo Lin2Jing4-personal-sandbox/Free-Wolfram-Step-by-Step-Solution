@@ -18,6 +18,9 @@ var appid =
 
 var proxy = 'https://lin2jing4-cors.herokuapp.com/'
 
+var flush = _ =>
+    container.insertAdjacentHTML('afterbegin', 'Processing, please wait. <progress>')
+
 var percentalize = str => 
     encodeURIComponent(str)
     .replace(/[-_.!~*'()]/g, char => '%' + char.charCodeAt(0).toString(16))
@@ -40,7 +43,7 @@ window.onhashchange = _ =>
 form.onsubmit = event => {
     if (event)
         event.preventDefault()
-    container.insertAdjacentHTML('afterbegin', 'Processing, please wait. <progress>')
+    flush()
     fetch(
         url()
     ).then(
@@ -56,7 +59,7 @@ if (window.onhashchange())
     form.onsubmit()
 
 var demo = category => {
-    container.insertAdjacentHTML('afterbegin', 'Processing, please wait. <progress>')
+    flush()
     fetch(
         `${proxy}https://www.wolframalpha.com/examples/pro-features/step-by-step-solutions/step-by-step-${category}`
     ).then(
