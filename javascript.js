@@ -34,11 +34,13 @@ http://api.wolframalpha.com/v2/query?
 &scantimeout=20
 `
 
-window.onhashchange = (
-    _ => input.value = decodeURIComponent(location.hash.slice(1))
+(
+window.onhashchange = _ =>
+    input.value = decodeURIComponent(location.hash.slice(1))
 )()
 
-form.onsubmit = (event => {
+(
+form.onsubmit = event => {
     if (input.value == '')
         return
     if (event)
@@ -53,7 +55,8 @@ form.onsubmit = (event => {
                                         .replace(/<pod title../g, '<h1>')
                                         .replace(/.......scanner/gs, '</h1><!')
     )
-})()
+}
+)()
 
 var demo = category => {
     container.insertAdjacentHTML('afterbegin', 'Processing, please wait. <progress>')
