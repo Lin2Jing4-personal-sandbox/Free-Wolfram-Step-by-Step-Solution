@@ -1,4 +1,4 @@
-# Wol[free](https://lin2jing4.github.io/Free-Wolfram-Step-by-Step-Solution/)Alpha: Free Wolfram Step-by-Step Solution
+# Wol[free](https://lin2jing4.github.io/Free-Wolfram-Step-by-Step-Solution/)Alpha: Free Step-by-Step Solution
 - [**Try it now**](https://lin2jing4.github.io/Free-Wolfram-Step-by-Step-Solution/), it's gratis!
 - Unlock/Receive FREE unlimited access to Wolfram|Alpha's full Step-by-step solutions.
 - Facilitate the use of [Wolfram|Alpha Show Steps API](https://products.wolframalpha.com/show-steps-api/documentation/).
